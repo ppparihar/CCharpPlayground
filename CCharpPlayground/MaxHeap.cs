@@ -46,10 +46,14 @@ namespace CCharpPlayground
             ChildParentHeapify(Count - 1);
         }
 
+        private int Parent(int index) => (index - 1) / 2;
+        private int LeftChild(int index) => 2 * index + 1;
+        private int RightChild(int index) => 2 * index + 2;
+
         private void MaxHeapify(int index)
         {
-            var left = 2 * index + 1;
-            var right = left + 1;
+            var left = LeftChild(index);
+            var right = RightChild(index);
             var largest = index;
             if (left >= Count)
             {
@@ -74,7 +78,7 @@ namespace CCharpPlayground
             {
                 return;
             }
-            var parent = index / 2;
+            var parent = Parent(index);
             if (heap[parent] < heap[index])
             {
                 Swap(index, parent);
