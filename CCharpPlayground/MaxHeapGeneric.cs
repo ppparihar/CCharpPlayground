@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CCharpPlayground
 {
-    public class MaxHeapGeneric<T> where T : IComparable
+    public class MaxHeapGeneric<T> where T : IComparable<T>
     {
         T[] heap;
 
