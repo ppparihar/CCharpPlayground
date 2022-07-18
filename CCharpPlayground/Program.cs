@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -15,9 +16,9 @@ namespace CCharpPlayground
     {
         static void Main(string[] args)
         {
-
+            //var json = File.ReadAllText("input.txt");
+            //var board = JsonConvert.DeserializeObject<char[][]>(json);
+            
         }
     }
-
-
 }
