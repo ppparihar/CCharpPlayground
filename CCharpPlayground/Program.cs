@@ -1,24 +1,18 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿//using System;
+//using System.Threading.Tasks;
 
-namespace CCharpPlayground
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //var json = File.ReadAllText("input.txt");
-            //var board = JsonConvert.DeserializeObject<char[][]>(json);
-            
-        }
-    }
-}
+//namespace CCharpPlayground
+//{
+//    class Program
+//    {
+//        static int COUNTER = 0;
+//        static async Task Main(string[] args)
+//        {
+//            var maxthread = 30;
+//            var totalRecord = 1000;
+//            await ParallelTask.SemaphoreSlimTask(maxthread, totalRecord);
+//            await ParallelTask.ParallelForEach(maxthread, totalRecord);
+//            Console.ReadLine();
+//        }
+//    }
+//}
