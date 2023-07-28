@@ -22,20 +22,20 @@
         [Benchmark]
         public async Task ParallelForEach() => await ParallelTask.ParallelForEach(maxthread, list);
     }
-    public class Program
-    {
-        public static async Task Main(string[] args)
-        {
-            var summary = BenchmarkRunner.Run<ParallelBenchmarks>();
+    //public class Program
+    //{
+    //    public static async Task Main(string[] args)
+    //    {
+    //        var summary = BenchmarkRunner.Run<ParallelBenchmarks>();
 
-            /* Uncomment following code to debug */
+    //        /* Uncomment following code to debug */
 
-            //int maxthread = 30;
-            //var totalRecord = 1000;
-            //IEnumerable<int> list = Enumerable.Range(1, totalRecord);
-            //await ParallelTask.SemaphoreSlim(maxthread, list);
-            //await ParallelTask.ParallelForEach(maxthread, list);
-            //Console.ReadLine();
-        }
-    }
+    //        //int maxthread = 30;
+    //        //var totalRecord = 1000;
+    //        //IEnumerable<int> list = Enumerable.Range(1, totalRecord);
+    //        //await ParallelTask.SemaphoreSlim(maxthread, list);
+    //        //await ParallelTask.ParallelForEach(maxthread, list);
+    //        //Console.ReadLine();
+    //    }
+    //}
 }
