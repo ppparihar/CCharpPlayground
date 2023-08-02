@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCharpPlayground", "CCharpPlayground\CCharpPlayground.csproj", "{A0ADE420-F997-4A82-84F0-57BD4CFC806E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Test", "Playground.Test\Playground.Test.csproj", "{B0D2A095-5308-46A9-9DC7-F28F6FA2B283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Test", "Playground.Test\Playground.Test.csproj", "{B0D2A095-5308-46A9-9DC7-F28F6FA2B283}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticKernelPlayground", "SemanticKernelPlayground\SemanticKernelPlayground.csproj", "{FBAA8032-99CB-48E1-B894-4086118B0B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubSender", "CCharpPlayground.EventHubSender\EventHubSender.csproj", "{B86E2466-CB55-423E-A23F-3944C00D6843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubReceiver", "CCharpPlayground.EventHubReceiver\EventHubReceiver.csproj", "{C725808C-0D07-485E-99CA-BA6BB4A9AFF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventHubs", "EventHubs", "{C66DA525-B7E5-49C1-ADF7-5ACA70A5395E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +29,25 @@ Global
 		{B0D2A095-5308-46A9-9DC7-F28F6FA2B283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0D2A095-5308-46A9-9DC7-F28F6FA2B283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0D2A095-5308-46A9-9DC7-F28F6FA2B283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBAA8032-99CB-48E1-B894-4086118B0B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBAA8032-99CB-48E1-B894-4086118B0B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBAA8032-99CB-48E1-B894-4086118B0B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAA8032-99CB-48E1-B894-4086118B0B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86E2466-CB55-423E-A23F-3944C00D6843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86E2466-CB55-423E-A23F-3944C00D6843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86E2466-CB55-423E-A23F-3944C00D6843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86E2466-CB55-423E-A23F-3944C00D6843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C725808C-0D07-485E-99CA-BA6BB4A9AFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C725808C-0D07-485E-99CA-BA6BB4A9AFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C725808C-0D07-485E-99CA-BA6BB4A9AFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C725808C-0D07-485E-99CA-BA6BB4A9AFF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B86E2466-CB55-423E-A23F-3944C00D6843} = {C66DA525-B7E5-49C1-ADF7-5ACA70A5395E}
+		{C725808C-0D07-485E-99CA-BA6BB4A9AFF1} = {C66DA525-B7E5-49C1-ADF7-5ACA70A5395E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4741BD4A-F52B-44CE-A2FE-FDF9078C9178}
