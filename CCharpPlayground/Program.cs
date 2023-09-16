@@ -1,18 +1,23 @@
-﻿//using System;
-//using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-//namespace CCharpPlayground
-//{
-//    class Program
-//    {
-//        static int COUNTER = 0;
-//        static async Task Main(string[] args)
-//        {
-//            var maxthread = 30;
-//            var totalRecord = 1000;
-//            await ParallelTask.SemaphoreSlimTask(maxthread, totalRecord);
-//            await ParallelTask.ParallelForEach(maxthread, totalRecord);
-//            Console.ReadLine();
-//        }
-//    }
-//}
+namespace CCharpPlayground
+{
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DigitalSignatureExample.Run();
+
+            Console.ReadKey();
+        }
+
+    }
+
+}

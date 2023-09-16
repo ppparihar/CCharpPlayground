@@ -16,7 +16,7 @@ IConfiguration config = builder.Build();
 // TODO: Replace the <EVENT_HUB_NAMESPACE> and <HUB_NAME> placeholder values
 EventHubProducerClient producerClient = new EventHubProducerClient(
   config.GetValue<string>("eventHubsConnectionString"),
-    config.GetValue<string>("eventHubName"));
+  config.GetValue<string>("eventHubName"));
 
 // Create a batch of events 
 using EventDataBatch eventBatch = await producerClient.CreateBatchAsync();
