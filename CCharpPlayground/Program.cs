@@ -8,12 +8,13 @@ namespace CCharpPlayground
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using CCharpPlayground.Hashing;
 
     class Program
     {
         static void Main(string[] args)
         {
-            HashKeyExample.Run();
+            PasswordHashing.Run();
 
             Console.ReadKey();
         }

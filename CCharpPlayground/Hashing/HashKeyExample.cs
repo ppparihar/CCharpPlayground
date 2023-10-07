@@ -1,4 +1,4 @@
-﻿namespace CCharpPlayground
+﻿namespace CCharpPlayground.Hashing
 {
     using System;
     using System.Collections;
@@ -28,7 +28,7 @@
         public static void HashKey(string key)
         {
             var keyBytes = Encoding.UTF8.GetBytes(key);
-            var hashBytes = System.Security.Cryptography.SHA256.HashData(keyBytes);
+            var hashBytes = SHA256.HashData(keyBytes);
             Console.WriteLine("Hashed key: " + Convert.ToBase64String(hashBytes));
         }
 
