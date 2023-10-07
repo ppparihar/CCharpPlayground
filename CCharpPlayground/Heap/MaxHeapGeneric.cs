@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CCharpPlayground
+namespace CCharpPlayground.Heap
 {
-    public class MaxHeap
+    public class MaxHeapGeneric<T> where T : IComparable<T>
     {
-        int[] heap;
+        T[] heap;
 
         public int Count { get; private set; }
-        public MaxHeap(int size)
+
+        IComparer<T> Comparer;
+        public MaxHeapGeneric(int size)
         {
             if (size < 0)
             {
                 throw new ArgumentException("The size can not be negative");
             }
-            heap = new int[size];
+            heap = new T[size];
         }
-        public int Peak()
+        public MaxHeapGeneric(int size, IComparer<T> comparer) : this(size)
+        {
+            Comparer = comparer;
+        }
+        public T Peak()
         {
             if (Count <= 0)
             {
@@ -26,7 +32,7 @@ namespace CCharpPlayground
             return heap[0];
         }
 
-        public int Pop()
+        public T Pop()
         {
             if (Count <= 0)
             {
@@ -39,7 +45,7 @@ namespace CCharpPlayground
             return temp;
         }
 
-        public void Add(int item)
+        public void Add(T item)
         {
             heap[Count] = item;
             Count++;
@@ -60,11 +66,11 @@ namespace CCharpPlayground
                 return;
             }
 
-            largest = heap[largest] < heap[left] ? left : largest;
+            largest = DoCompare(left, largest) > 0 ? left : largest;
 
             if (right < Count)
             {
-                largest = heap[largest] < heap[right] ? right : largest;
+                largest = DoCompare(right, largest) > 0 ? right : largest;
             }
             if (largest != index)
             {
@@ -79,7 +85,7 @@ namespace CCharpPlayground
                 return;
             }
             var parent = Parent(index);
-            if (heap[parent] < heap[index])
+            if (DoCompare(index, parent) > 0)
             {
                 Swap(index, parent);
                 ChildParentHeapify(parent);
@@ -91,6 +97,13 @@ namespace CCharpPlayground
             var temp = heap[b];
             heap[b] = heap[a];
             heap[a] = temp;
+        }
+
+        private int DoCompare(int firstIndex, int secondIndex)
+        {
+            T initial = heap[firstIndex];
+            T contender = heap[secondIndex];
+            return Comparer != null ? Comparer.Compare(initial, contender) : initial.CompareTo(contender);
         }
     }
 }

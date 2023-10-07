@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CCharpPlayground
+namespace CCharpPlayground.Heap
 {
     public class MinHeap
     {

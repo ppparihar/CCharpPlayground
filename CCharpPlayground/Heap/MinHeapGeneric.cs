@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CCharpPlayground
+namespace CCharpPlayground.Heap
 {
-    public class MaxHeapGeneric<T> where T : IComparable<T>
+    public class MinHeapGeneric<T> where T : IComparable<T>
     {
         T[] heap;
 
         public int Count { get; private set; }
 
         IComparer<T> Comparer;
-        public MaxHeapGeneric(int size)
+        public MinHeapGeneric(int size)
         {
             if (size < 0)
             {
@@ -19,9 +19,9 @@ namespace CCharpPlayground
             }
             heap = new T[size];
         }
-        public MaxHeapGeneric(int size, IComparer<T> comparer) : this(size)
+        public MinHeapGeneric(int size, IComparer<T> comparer) : this(size)
         {
-            this.Comparer = comparer;
+            Comparer = comparer;
         }
         public T Peak()
         {
@@ -41,12 +41,16 @@ namespace CCharpPlayground
             var temp = heap[0];
             heap[0] = heap[Count - 1];
             Count--;
-            MaxHeapify(0);
+            ParentChildHeapify(0);
             return temp;
         }
 
         public void Add(T item)
         {
+            if (Count == heap.Length)
+            {
+                throw new ArgumentOutOfRangeException("Max limit of heap has reached, Can't add new item");
+            }
             heap[Count] = item;
             Count++;
             ChildParentHeapify(Count - 1);
@@ -56,28 +60,29 @@ namespace CCharpPlayground
         private int LeftChild(int index) => 2 * index + 1;
         private int RightChild(int index) => 2 * index + 2;
 
-        private void MaxHeapify(int index)
+        private void ParentChildHeapify(int index)
         {
             var left = LeftChild(index);
             var right = RightChild(index);
-            var largest = index;
+            var smallerIndex = index;
             if (left >= Count)
             {
                 return;
             }
 
-            largest = DoCompare(left, largest) > 0 ? left : largest;
+            smallerIndex = DoCompare(left, smallerIndex) < 0 ? left : smallerIndex;
 
             if (right < Count)
             {
-                largest = DoCompare(right, largest) > 0 ? right : largest;
+                smallerIndex = DoCompare(right, smallerIndex) < 0 ? right : smallerIndex;
             }
-            if (largest != index)
+            if (smallerIndex != index)
             {
-                Swap(index, largest);
-                MaxHeapify(largest);
+                Swap(index, smallerIndex);
+                ParentChildHeapify(smallerIndex);
             }
         }
+
         private void ChildParentHeapify(int index)
         {
             if (index <= 0 || index >= Count)
@@ -85,7 +90,7 @@ namespace CCharpPlayground
                 return;
             }
             var parent = Parent(index);
-            if (DoCompare(index, parent) > 0)
+            if (DoCompare(index, parent) < 0)
             {
                 Swap(index, parent);
                 ChildParentHeapify(parent);
@@ -103,7 +108,7 @@ namespace CCharpPlayground
         {
             T initial = heap[firstIndex];
             T contender = heap[secondIndex];
-            return this.Comparer != null ? Comparer.Compare(initial, contender) : initial.CompareTo(contender);
+            return Comparer != null ? Comparer.Compare(initial, contender) : initial.CompareTo(contender);
         }
     }
 }
