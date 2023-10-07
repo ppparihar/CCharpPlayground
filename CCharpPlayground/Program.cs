@@ -13,7 +13,7 @@ namespace CCharpPlayground
     {
         static void Main(string[] args)
         {
-            DigitalSignatureExample.Run();
+            HashKeyExample.Run();
 
             Console.ReadKey();
         }
