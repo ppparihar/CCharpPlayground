@@ -1,4 +1,4 @@
-﻿namespace CCharpPlayground
+﻿namespace CCharpPlayground.DigitalSignature
 {
     using System;
     using System.Text;
