@@ -1,34 +1,34 @@
 ﻿using CCharpPlayground.Heap;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace Playground.Test
 {
 
-    [TestClass]
+
     public class MaxHeapTest
     {
-        [TestMethod]
+        [Fact]
         public void MaxValue()
         {
             var maxHeap = new MaxHeap(10);
 
             maxHeap.Add(1);
-            Assert.AreEqual(1, maxHeap.Peak());
+            Assert.Equal(1, maxHeap.Peak());
 
             maxHeap.Add(10);
-            Assert.AreEqual(10, maxHeap.Peak());
+            Assert.Equal(10, maxHeap.Peak());
 
             maxHeap.Add(5);
-            Assert.AreEqual(10, maxHeap.Peak());
+            Assert.Equal(10, maxHeap.Peak());
 
             maxHeap.Add(2);
-            Assert.AreEqual(10, maxHeap.Peak());
+            Assert.Equal(10, maxHeap.Peak());
 
             maxHeap.Add(20);
-            Assert.AreEqual(20, maxHeap.Peak());
+            Assert.Equal(20, maxHeap.Peak());
         }
 
-        [TestMethod]
+        [Fact]
         public void PopMax()
         {
             var maxHeap = new MaxHeap(10);
@@ -39,24 +39,24 @@ namespace Playground.Test
             maxHeap.Add(5);
             maxHeap.Add(2);
 
-            Assert.AreEqual(10, maxHeap.Peak());
-            Assert.AreEqual(10, maxHeap.Pop());
-            Assert.AreEqual(9, maxHeap.Peak());
+            Assert.Equal(10, maxHeap.Peak());
+            Assert.Equal(10, maxHeap.Pop());
+            Assert.Equal(9, maxHeap.Peak());
 
             maxHeap.Add(20);
             maxHeap.Add(10);
             maxHeap.Add(30);
-            Assert.AreEqual(30, maxHeap.Peak());
-            Assert.AreEqual(30, maxHeap.Pop());
-            Assert.AreEqual(20, maxHeap.Peak());
-            Assert.AreEqual(20, maxHeap.Pop());
-            Assert.AreEqual(10, maxHeap.Pop());
-            Assert.AreEqual(9, maxHeap.Pop());
-            Assert.AreEqual(5, maxHeap.Pop());
-            Assert.AreEqual(2, maxHeap.Pop());
-            Assert.AreEqual(1, maxHeap.Pop());
+            Assert.Equal(30, maxHeap.Peak());
+            Assert.Equal(30, maxHeap.Pop());
+            Assert.Equal(20, maxHeap.Peak());
+            Assert.Equal(20, maxHeap.Pop());
+            Assert.Equal(10, maxHeap.Pop());
+            Assert.Equal(9, maxHeap.Pop());
+            Assert.Equal(5, maxHeap.Pop());
+            Assert.Equal(2, maxHeap.Pop());
+            Assert.Equal(1, maxHeap.Pop());
 
-            Assert.AreEqual(0, maxHeap.Count);
+            Assert.Equal(0, maxHeap.Count);
         }
     }
 }
