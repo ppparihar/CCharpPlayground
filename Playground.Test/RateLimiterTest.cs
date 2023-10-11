@@ -25,5 +25,16 @@
 
             Assert.False(rateLimiter.Consume(3));
         }
+
+        [Fact]
+        public void TestWithDeay2()
+        {
+            var rateLimiter = new RateLimiter(10, 2);
+            Assert.True(rateLimiter.Consume(10));
+            //delay
+            Thread.Sleep(1000);
+
+            Assert.False(rateLimiter.Consume(10));
+        }
     }
 }
