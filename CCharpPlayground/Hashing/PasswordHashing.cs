@@ -6,8 +6,6 @@
     {
         public static void Run()
         {
-
-
             string password = "my_secure_password";
             string hashedPassword = BCrypt.HashPassword(password);
             VerifyPassword(password, hashedPassword);
