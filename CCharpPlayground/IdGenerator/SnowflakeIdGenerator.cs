@@ -2,7 +2,7 @@
 
 public class SnowflakeIdGenerator
 {
-    private const long Twepoch = 1288834974657L;
+    private const long Twepoch = 1288834974657L; // (January 1, 1970, UTC).
     private const int TimestampBits = 41;
     private const int MachineIdBits = 10;
     private const int SequenceBits = 12;
