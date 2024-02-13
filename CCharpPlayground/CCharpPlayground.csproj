@@ -25,9 +25,6 @@
     <None Update="input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Device-count.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="IotHub4.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
